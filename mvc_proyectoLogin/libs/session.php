@@ -7,6 +7,7 @@ class Session{
     function connectionSession(){
         if(!isset($_SESSION)){
             session_start();
+            
         }
 
         

@@ -25,7 +25,7 @@
                     session_start();
                     $_SESSION['id'] = $user->id;
                     $_SESSION['name'] = $user->name;
-
+                    
                     $this->view->render('main/index');
             }else{
 

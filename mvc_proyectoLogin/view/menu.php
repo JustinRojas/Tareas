@@ -1,6 +1,13 @@
 <?php
 $link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 $ses = session_status();
+if(!isset($_SESSION)){
+  
+  $name ="";
+}else{
+  $name = $_SESSION['name'];
+}
+
 
 ?>
 
@@ -44,11 +51,16 @@ $ses = session_status();
         <button type="button" <?php echo $ses==1 || $ses==0? "" :"hidden";?> class="btn btn-secondary btn-sm">Registrarse</button>
       </div>
 
+      <div class="m-2">      
+        <h6 type="" <?php echo $ses==2? "" :"hidden";?> onClick="" class=""> <?php echo 'Bienvenido '. $name?> </h6>
+      </div>
+
       <div class="m-2">
         <form action="<?php echo constant('URL'); ?>login/cerrarSesion" method="post">
-        <button type="submit" <?php echo $ses==2? "" :"hidden";?> onClick="" class="btn btn-secondary btn-sm">Salir</button>
+        <button type="submit" <?php echo $ses==2? "" :"hidden";?> onClick="" class="btn btn-secondary btn-sm">Cerrar sesión</button>
         </form>
       </div>
+
 
     </div>
 
