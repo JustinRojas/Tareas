@@ -1,10 +1,9 @@
 <?php
     require 'view/header.php';
     require 'view/menu.php';
-    
 ?>
 <div class="container-fluid" id="contendorprincipal">
-    <h3><?php echo $this->mensaje;?></h3>
+    <h1><?php echo $this->mensaje;?></h1>
     
     <?php echo $this->mensajeResultado ?>
     <div class="table-responsive">
@@ -14,13 +13,10 @@
         table-secondary
         align-middle">
             <thead class="table-light">
-
                 <caption><?php echo $this->mensaje;?></caption>
                 <tr>
                     <th>Id</th>
                     <th>Nombre</th>
-                    <th>Email</th>
-                    <th>Password</th>
                     <th>Acciones</th>
                 </tr>
                 </thead>
@@ -28,18 +24,16 @@
                     <?php 
                         foreach ($this->datos as $row) {
 
-                            $datos = new User();
+                            $datos = new classGrupos();
                             $datos = $row;
                             # code..
                             echo ' <tr class="table-secondary" >
                                     <td scope="row">'.$datos->id.'</td>
-                                    <td>'.$datos->name.'</td>
-                                    <td>'.$datos->email.'</td>
-                                    <td>'.$datos->password.'</td>
+                                    <td>'.$datos->nombre.'</td>                                  
                                     <td>
-                                        <a name="eliminar" id="eliminar" class="btn btn-danger" href="'.constant('URL').'usuarios/eliminarUsuario/'.$datos->id.'" role="button">Eliminar</a>
+                                        <a name="eliminar" id="eliminar" class="btn btn-danger" href="'.constant('URL').'grupos/eliminargrupo/'.$datos->id.'" role="button">Eliminar</a>
                                         ||
-                                        <a name="editar" id="editar" class="btn btn-primary" href="'.constant('URL').'usuarios/verUsuario/'.$datos->id.'" role="button">Editar</a>
+                                        <a name="editar" id="editar" class="btn btn-primary" href="'.constant('URL').'grupos/verGrupos/'.$datos->id.'" role="button">Editar</a>
                                     </td>
                                 </tr>';
                         }
