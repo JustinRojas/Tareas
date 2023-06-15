@@ -50,12 +50,12 @@ class Estudiantes extends Controller{
 
         $datos = $this->model->verEstudiantes($id);        
         $this->view->datos = $datos;
-        $this->view->mensaje = "Detalle Curso";
-        $this->view->render('cursos/detalle');
+        $this->view->mensaje = "Detalle estudiante";
+        $this->view->render('estudiantes/detalle');
     }
 
     //actualizarcurso
-    function actualizarEstudiantes(){
+    function actualizarEstudiante(){
         //var_dump($_POST);
         if ($this->model->actualizarEstudiantes($_POST)){
 
@@ -81,7 +81,7 @@ class Estudiantes extends Controller{
         $this->view->datos = $datos;
         $this->view->mensaje = "Detalle estudiantes";
         $this->view->mensajeResultado = $mensajeResultado;        
-        $this->view->render('cursos/detalle');
+        $this->view->render('estudiantes/detalle');
     }    
 
     //eliminarcurso

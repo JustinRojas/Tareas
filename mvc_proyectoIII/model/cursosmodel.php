@@ -35,11 +35,12 @@ class CursosModel extends Model{
 
     public function insertarCurso($datos){
 //# INSERT INTO curso(id, nombre, descripcion, tiempo, usuario) VALUES ('[value-1]','[value-2]','[value-3]','[value-4]','[value-5]')
-        try {
+      var_dump($datos);
+try {
             //code...
             $datos['id'] = "0";
             $datos['usuario'] = "Prof Mario";
-            $stringSQL = 'INSERT INTO curso(id, nombre, descripcion, tiempo, usuario) VALUES ( :id, :nombre, :descripcion, :tiempo, :usuario);';
+            $stringSQL = 'INSERT INTO curso(id, nombre, descripcion, tiempo, usuario) VALUES ( :id,  :nombre,  :descripcion , :tiempo, :usuario);';
             $query = $this->db->connect()->prepare($stringSQL);
             $query->execute($datos);
             return true;

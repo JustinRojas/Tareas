@@ -42,7 +42,8 @@ class EstudiantesModel extends Model{
 
     public function insertarEstudiante($datos){
 //# INSERT INTO curso(id, nombre, descripcion, tiempo, usuario) VALUES ('[value-1]','[value-2]','[value-3]','[value-4]','[value-5]')
-        try {
+       var_dump($datos);
+try {
             //code...
             $datos['id'] = "0";
             $datos['usuario'] = "Jb";
@@ -53,7 +54,7 @@ class EstudiantesModel extends Model{
             :fechanacimiento, :sexo, :direccion, :nombre, :apellidopaterno, 
             :apellidomaterno, :nacionalidad, :idCarreras, :usuario);';
 
-
+        var_dump($stringSQL);
             $query = $this->db->connect()->prepare($stringSQL);
             $query->execute($datos);
             return true;
@@ -89,15 +90,15 @@ class EstudiantesModel extends Model{
     }
       //actualizarcurso
       public function actualizarEstudiantes($datos){
-//            var_dump($datos);
+           var_dump($datos);
         try {
             //code... 
             $datos['usuario'] = "Jb";
             #UPDATE estudiante SET cedula='[value-2]',correoelectronico='[value-3]',telefono='[value-4]',telefonocelular='[value-5]',fechanacimiento='[value-6]',sexo='[value-7]',direccion='[value-8]',nombre='[value-9]',apellidopaterno='[value-10]',apellidomaterno='[value-11]',nacionalidad='[value-12]',idCarreras='[value-13]',usuario='[value-14]' WHERE  id='[value-1]'
 
             $stringSQL = 'UPDATE estudiante SET cedula=:cedula,correoelectronico=:correoelectronico,telefono=:telefono,
-            telefonocelular, =:telefonocelular, fechanacimiento, =:fechanacimiento, 
-            sexo, =:sexo, direccion=:direccion, nombre=:nombre, apellidopaterno=:apellidopaterno, nacionalidad=:nacionalidad, idCarreras=:idCarreras, usuario=:usuario WHERE id=:id ;';
+            telefonocelular =:telefonocelular, fechanacimiento =:fechanacimiento, 
+            sexo =:sexo, direccion=:direccion, nombre=:nombre, apellidopaterno=:apellidopaterno, apellidomaterno=:apellidomaterno, nacionalidad=:nacionalidad, idCarreras=:idCarreras, usuario=:usuario WHERE id=:id ;';
             $query = $this->db->connect()->prepare($stringSQL);
             $query->execute($datos);
             return true;

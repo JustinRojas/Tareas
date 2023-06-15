@@ -41,7 +41,7 @@ var_dump($name, $ses);
         <li class="nav-item dropdown" <?php echo $ses == 2 ? "" : "hidden"; ?>>
           <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true"
             aria-expanded="false">Usuarios</a>
-          <div class="dropdown-menu">
+          <div class="dropdown-menu" style="background-color: #ECCEFE">
             <a class="dropdown-item" href="<?php echo constant('URL'); ?>usuarios">Consulta</a>
             <a class="dropdown-item" href="<?php echo constant('URL'); ?>usuarios/crear">Crear</a>
             <div class="dropdown-divider"></div>
@@ -52,7 +52,7 @@ var_dump($name, $ses);
         <li class="nav-item dropdown" <?php echo $ses == 2 ? "" : "hidden"; ?>>
           <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true"
             aria-expanded="false">Grupos</a>
-          <div class="dropdown-menu">
+          <div class="dropdown-menu" style="background-color: #ECCEFE">
             <a class="dropdown-item" href="<?php echo constant('URL'); ?>grupos">Consulta</a>
             <a class="dropdown-item" href="<?php echo constant('URL'); ?>grupos/crear">Crear</a>
             <div class="dropdown-divider"></div>
@@ -63,7 +63,7 @@ var_dump($name, $ses);
         <li class="nav-item dropdown" <?php echo $ses == 2 ? "" : "hidden"; ?>>
           <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true"
             aria-expanded="false">Cursos</a>
-          <div class="dropdown-menu">
+          <div class="dropdown-menu" style="background-color: #ECCEFE">
             <a class="dropdown-item" href="<?php echo constant('URL'); ?>cursos">Consulta</a>
             <a class="dropdown-item" href="<?php echo constant('URL'); ?>cursos/crear">Crear</a>
             <div class="dropdown-divider"></div>
@@ -75,7 +75,7 @@ var_dump($name, $ses);
         <li class="nav-item dropdown" <?php echo $ses == 2 ? "" : "hidden"; ?>>
           <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true"
             aria-expanded="false">Estudiantes</a>
-          <div class="dropdown-menu">
+          <div class="dropdown-menu" style="background-color: #ECCEFE">
             <a class="dropdown-item" href="<?php echo constant('URL'); ?>estudiantes">Consulta</a>
             <a class="dropdown-item" href="<?php echo constant('URL'); ?>estudiantes/crear">Crear</a>
             <div class="dropdown-divider"></div>
@@ -96,8 +96,9 @@ var_dump($name, $ses);
       </div>
 
       <div class="m-2">
-        <h6 type="" <?php echo $ses == 2 ? "" : "hidden"; ?> onClick="" class=""> <?php echo 'Bienvenido ' . $name ?>
-        </h6>
+        <h6 type="" <?php echo $ses == 2 ? "" : "hidden"; ?> onClick="" class=""> <?php echo 'Welcome: ' ?>
+       <a style="color:#9F57CA"> <?php echo $name ?></a>
+      </h6>
       </div>
 
       <div class="m-2">
