@@ -60,6 +60,29 @@ var_dump($name, $ses);
           </div>
         </li>
 
+        <li class="nav-item dropdown" <?php echo $ses == 2 ? "" : "hidden"; ?>>
+          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+            aria-expanded="false">Cursos</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="<?php echo constant('URL'); ?>cursos">Consulta</a>
+            <a class="dropdown-item" href="<?php echo constant('URL'); ?>cursos/crear">Crear</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#tab4Id">Action</a>
+          </div>
+        </li>
+
+        
+        <li class="nav-item dropdown" <?php echo $ses == 2 ? "" : "hidden"; ?>>
+          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+            aria-expanded="false">Estudiantes</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="<?php echo constant('URL'); ?>estudiantes">Consulta</a>
+            <a class="dropdown-item" href="<?php echo constant('URL'); ?>estudiantes/crear">Crear</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#tab4Id">Action</a>
+          </div>
+        </li>
+
       </ul>
 
       <div class="m-2">
