@@ -1,6 +1,6 @@
 <div>
         <div class="row ">
-
+//SE DEBE PASAR LOS ESTILOS POR EL CSS DEFAULD
             <div style="text-align: center" class="col">
                 <p id="frase" style="  padding-top: 1rem;
     font-family: Georgia, Serif;
