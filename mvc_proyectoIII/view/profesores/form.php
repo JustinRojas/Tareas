@@ -4,8 +4,11 @@
     <div class="">
         <div class="mb-3" <?php echo isset($this->datos->id) ? "" : "hidden"; ?>>
             <label for="" class="form-label">Id</label>
-            <input value="<?php echo isset($this->datos->id) ? $this->datos->id : ""; ?>" type="text" name="id" id="id"
-                style="background-color: rgb(184, 184, 184);" class="form-control"
+                    <!-- para pasar el valor, y la segunda validación para que solo se pueda leer -->
+            <input value="<?php echo isset($this->datos->id) ? $this->datos->id : ""; ?>" 
+            type="text" name="id" id="id"
+            <?php echo isset($this->datos->id) ? "readonly" : ""; ?>
+            style="background-color: rgb(184, 184, 184);" class="form-control"
                 placeholder="ingresar nombre del curso" aria-describedby="helpId">
 
         </div>
@@ -92,7 +95,7 @@
 
 
             <label for="" class="form-label">Grupo </label>
-            <select class="form-select form-select-md" required name="idCarreras" id="idCarreras">
+            <select class="form-select form-select-md"  name="idCarreras" id="idCarreras">
                 <option value="<?php echo isset($this->datos->idCarreras) ? $this->datos->idCarreras : ""; ?>"> Seleccione un grupo</option>
             </select>
 

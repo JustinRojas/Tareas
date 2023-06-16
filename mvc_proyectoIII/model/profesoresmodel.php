@@ -3,7 +3,7 @@
 include_once 'class/profesores.php';
 
 
-class EstudiantesModel extends Model{
+class ProfesoresModel extends Model{
 
     public function __construct(){
         parent::__construct();

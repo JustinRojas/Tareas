@@ -58,8 +58,8 @@ class Profesores extends Controller{
         $datos = $this->model->verProfesores($id);   //trae los datos del estudiante con el id que se le está pasando     
         $this->view->datos = $datos; //iguala la variable que se crea en el constructor con la que se creo acá que trae todo los datos de un profe
 
-        $this->view->mensaje = "Detalle estudiante";
-        $this->view->render('estudiantes/detalle');
+        $this->view->mensaje = "Detalle profesor";
+        $this->view->render('profesores/detalle');
     }
 
     //actualizarcurso
