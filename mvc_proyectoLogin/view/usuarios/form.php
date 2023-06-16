@@ -25,7 +25,7 @@
     <div class="mb-3">
         <label for="" class="form-label">Password</label>
         <input type="text" required
-          class="form-control" name="password" id="password" aria-describedby="helpId" placeholder=""
+          class="form-control" type="password" name="password" id="password" aria-describedby="helpId" placeholder=""
           value="<?php echo isset($this->datos->password)? $this->datos->password :"";?>">
         <small id="helpId" class="form-text text-muted">Descripcion Curso</small>
       </div>

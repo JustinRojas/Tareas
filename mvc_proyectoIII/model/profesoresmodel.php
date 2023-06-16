@@ -1,24 +1,31 @@
 <?php
 
-include_once 'class/cursos.php';
+include_once 'class/profesores.php';
 
 
-class CursosModel extends Model{
+class EstudiantesModel extends Model{
 
     public function __construct(){
         parent::__construct();
     }
 
-    public function getCursos(){        
+    public function getProfesores(){        
         $items = [];
 
         try {
             //code...
-            $stringSQL = "SELECT * FROM `curso` order by id DESC;";
+
+            $stringSQL =  "SELECT id, cedula, correoelectronico, telefono, telefonocelular, 
+            fechanacimiento, sexo, direccion, nombre, apellidopaterno, 
+            apellidomaterno, nacionalidad, idCarreras, usuario FROM `profesor` order by id DESC;";  
+
+            // $stringSQL = "SELECT * FROM `curso` order by id DESC;";
+
+
             $query = $this->db->connect()->query($stringSQL);
 
             while ( $row = $query->fetch()){//obtiene todas las filas
-                $item = new classCursos();
+                $item = new classProfesores();
 
                 foreach ($row as $key => $value) {
                     # code...
@@ -33,14 +40,21 @@ class CursosModel extends Model{
         }
     }
 
-    public function insertarCurso($datos){
+    public function insertarProfesor($datos){
 //# INSERT INTO curso(id, nombre, descripcion, tiempo, usuario) VALUES ('[value-1]','[value-2]','[value-3]','[value-4]','[value-5]')
-      var_dump($datos);
+       var_dump($datos);
 try {
             //code...
             $datos['id'] = "0";
             $datos['usuario'] = "Jb";
-            $stringSQL = 'INSERT INTO curso(id, nombre, descripcion, tiempo, usuario) VALUES ( :id,  :nombre,  :descripcion , :tiempo, :usuario);';
+
+            $stringSQL = 'INSERT INTO profesor(id, cedula, correoelectronico, telefono, telefonocelular, 
+            fechanacimiento, sexo, direccion, nombre, apellidopaterno, 
+            apellidomaterno, nacionalidad, idCarreras, usuario) VALUES ( :id, :cedula, :correoelectronico, :telefono, :telefonocelular, 
+            :fechanacimiento, :sexo, :direccion, :nombre, :apellidopaterno, 
+            :apellidomaterno, :nacionalidad, :idCarreras, :usuario);';
+
+        var_dump($stringSQL);
             $query = $this->db->connect()->prepare($stringSQL);
             $query->execute($datos);
             return true;
@@ -52,12 +66,12 @@ try {
         }
     }
 
-    public function verCursos($id){
+    public function verProfesores($id){
         
         try {
-            $item = new classCursos();
+            $item = new classProfesores();
             //code...
-            $stringSQL = "Select * FROM `curso` where id=:id;";
+            $stringSQL = "Select * FROM `profesor` where id=:id;";
             $query = $this->db->connect()->prepare($stringSQL);
             $query->execute(['id'=>$id]);
 
@@ -75,13 +89,16 @@ try {
         }           
     }
       //actualizarcurso
-      public function actualizarcurso($datos){
-//            var_dump($datos);
+      public function actualizarProfesores($datos){
+           var_dump($datos);
         try {
             //code... 
-            //#UPDATE curso SET nombre='[value-2]',descripcion='[value-3]',tiempo='[value-4]',usuario='[value-5]' WHERE id='[value-1]'                     
-            $datos['usuario'] = "JB";
-            $stringSQL = 'UPDATE curso SET nombre=:nombre,descripcion=:descripcion,tiempo=:tiempo,usuario=:usuario WHERE id=:id ;';
+            $datos['usuario'] = "Jb";
+            #UPDATE estudiante SET cedula='[value-2]',correoelectronico='[value-3]',telefono='[value-4]',telefonocelular='[value-5]',fechanacimiento='[value-6]',sexo='[value-7]',direccion='[value-8]',nombre='[value-9]',apellidopaterno='[value-10]',apellidomaterno='[value-11]',nacionalidad='[value-12]',idCarreras='[value-13]',usuario='[value-14]' WHERE  id='[value-1]'
+
+            $stringSQL = 'UPDATE estudiante SET cedula=:cedula,correoelectronico=:correoelectronico,telefono=:telefono,
+            telefonocelular =:telefonocelular, fechanacimiento =:fechanacimiento, 
+            sexo =:sexo, direccion=:direccion, nombre=:nombre, apellidopaterno=:apellidopaterno, apellidomaterno=:apellidomaterno, nacionalidad=:nacionalidad, idCarreras=:idCarreras, usuario=:usuario WHERE id=:id ;';
             $query = $this->db->connect()->prepare($stringSQL);
             $query->execute($datos);
             return true;
@@ -94,10 +111,11 @@ try {
     }   
 
     //eliminarcurso
-    public function eliminarcurso($id){        
+    public function eliminarProfesores($id){        
         try {            
             //code...
-            $stringSQL = "DELETE FROM `curso` WHERE id =:id;";
+            $stringSQL = "DELETE FROM `profesor` WHERE id =:id;";
+
             $query = $this->db->connect()->prepare($stringSQL);
             $query->execute(['id'=>$id]);
             
