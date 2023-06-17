@@ -11,10 +11,10 @@ class App{
         //$url = 0 pagina(controlador=login) / 1 admin/ 2 funcion
 
         if (empty($url[0])){
-            $archivoController = 'controller/login.php'; //puse el login de primero para que tenga que iniciar sessión o registrarse para entrar
+            $archivoController = 'controller/main.php'; //puse el login de primero para que tenga que iniciar sessión o registrarse para entrar
             require_once $archivoController;
-            $controller = new login(); 
-            $controller->loadModel('login');
+            $controller = new Main(); 
+            $controller->loadModel('main');
             $controller->render();
             return false;
         }
