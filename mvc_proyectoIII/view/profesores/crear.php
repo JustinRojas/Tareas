@@ -9,7 +9,7 @@ require 'view/menu.php';
 <h1><?php echo $this->mensaje;?></h1> 
 
 <!-- Acá se envuelve los inputs creador en form.php dentro de un form para así darle la acción el tipo de método -->
-<form class="form-control" action="<?php echo constant('URL'); ?>estudiantes/insertarEstudiante" method="POST">
+<form class="form-control" action="<?php echo constant('URL'); ?>profesores/insertarProfesor" method="POST">
         <?php require 'form.php'; ?>
     </form>
 

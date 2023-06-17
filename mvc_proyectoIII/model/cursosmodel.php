@@ -35,7 +35,7 @@ class CursosModel extends Model{
 
     public function insertarCurso($datos){
 //# INSERT INTO curso(id, nombre, descripcion, tiempo, usuario) VALUES ('[value-1]','[value-2]','[value-3]','[value-4]','[value-5]')
-      var_dump($datos);
+   //   var_dump($datos);
 try {
             //code...
             $datos['id'] = "0";
@@ -76,7 +76,7 @@ try {
     }
       //actualizarcurso
       public function actualizarcurso($datos){
-//            var_dump($datos);
+        //    var_dump($datos);
         try {
             //code... 
             //#UPDATE curso SET nombre='[value-2]',descripcion='[value-3]',tiempo='[value-4]',usuario='[value-5]' WHERE id='[value-1]'                     

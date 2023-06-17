@@ -16,12 +16,10 @@ if (!isset($_SESSION) || $ses == 1) {
 if ($name == "") {
   $ses = 1;
 }
-var_dump($name, $ses);
-
 
 ?>
 
-<nav class="navbar navbar-expand-sm navbar-light bg-info">
+<nav class="navbar navbar-expand-sm navbar-light bg-info" >
   <div class="container">
     <a class="navbar-brand" href="<?php echo constant('URL'); ?>main">JB Page</a>
     <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId"
@@ -32,10 +30,7 @@ var_dump($name, $ses);
       <ul class="navbar-nav me-auto mt-2 mt-lg-0">
 
         <li class="nav-item">
-          <a class="nav-link" href="<?php echo constant('URL'); ?>main">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="listaCursos.html" aria-current="page"> Blog</a>
+          <a class="nav-link"  href="<?php echo constant('URL'); ?>main">Home</a>
         </li>
 
         <li class="nav-item dropdown" <?php echo $ses == 2 ? "" : "hidden"; ?>>

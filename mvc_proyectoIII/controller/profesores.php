@@ -7,7 +7,9 @@ class Profesores extends Controller{
 
         $this->view->datos = []; //para que se cree el array cuando se haga una instancia de la clase y se inicialice
         $this->view->mensaje = "Sección profesores";
-        $this->view->mensajeResultado = "";        
+        $this->view->mensajeResultado = ""; 
+        $this->view->grupos = [];    
+        
     }
 
 
@@ -15,11 +17,17 @@ class Profesores extends Controller{
     function render(){
         $datos = $this->model->getProfesores();      //método que se encuentra en el modelo         
         $this->view->datos = $datos;
+        
         $this->view->render('profesores/index');
+
+        
     }
+
 
     function crear(){   //para ver la vista de crear un profesor            
         $this->view->datos = []; //iguala el array a vacio
+        // $grupos = $this->model->getGrupos();               
+        // $this->view->grupos = $grupos;
         $this->view->mensaje = "Crear profesores";
         $this->view->render('profesores/crear');
     }
@@ -28,6 +36,7 @@ class Profesores extends Controller{
     //método para registrar en la bd
     function insertarProfesor(){
         //var_dump($_POST);
+       
         if ($this->model->insertarProfesor($_POST)){ //este método de es del módelo se encarga de hacer el INSERT en la bd, devuelve true o false
             $mensajeResultado = '
                 <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -45,18 +54,16 @@ class Profesores extends Controller{
         $this->render();
     }
 
-    // function detalle(){                      
-    //     $this->view->datos = [];
-    //     $this->view->mensaje = "Detalles del Cursos";
-    //     $this->view->render('cursos/detalle');
-    // }
+   
 
     //método para ver la info de un profe, carga la vista detalles
     function verProfesores( $param = null ){        
         $id = $param[0];
-
+        
         $datos = $this->model->verProfesores($id);   //trae los datos del estudiante con el id que se le está pasando     
         $this->view->datos = $datos; //iguala la variable que se crea en el constructor con la que se creo acá que trae todo los datos de un profe
+        $grupos = $this->model->getGrupos();               
+        $this->view->grupos = $grupos;
 
         $this->view->mensaje = "Detalle profesor";
         $this->view->render('profesores/detalle');
@@ -76,7 +83,7 @@ class Profesores extends Controller{
 
             $mensajeResultado = '
                 <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    <button type="button" class="btn-close"  data-bs-dismiss="alert" aria-label="Close"></button>
                     Actualizacion de Registro
                 </div>';
         }else{
@@ -90,7 +97,9 @@ class Profesores extends Controller{
         $this->view->mensaje = "Detalle profesores";
         $this->view->mensajeResultado = $mensajeResultado;        
         $this->view->render('profesores/detalle');
-    }    
+    } 
+       
+
 
     //eliminarcurso
     function eliminarProfesores( $param = null ){   

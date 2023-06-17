@@ -1,7 +1,7 @@
 <?php
 
 include_once 'class/estudiantes.php';
-
+include_once 'class/grupos.php';
 
 class EstudiantesModel extends Model{
 
@@ -40,9 +40,33 @@ class EstudiantesModel extends Model{
         }
     }
 
+    public function getGrupos(){
+        $items = [];
+
+        try {
+            //code...
+            $stringSQL = "SELECT * FROM `grupo` order by id DESC;";
+            $query = $this->db->connect()->query($stringSQL);
+
+            while ( $row = $query->fetch()){//obtiene todas las filas
+                $item = new classGrupos();
+
+                foreach ($row as $key => $value) {
+                    # code...
+                    $item->$key = $value;
+                }
+                array_push($items, $item);
+            }
+            return $items;
+            
+        } catch (PDOException $th) {
+            //throw $th;
+            return [];
+        }
+    }
     public function insertarEstudiante($datos){
 //# INSERT INTO curso(id, nombre, descripcion, tiempo, usuario) VALUES ('[value-1]','[value-2]','[value-3]','[value-4]','[value-5]')
-       var_dump($datos);
+      // var_dump($datos);
 try {
             //code...
             $datos['id'] = "0";
@@ -90,7 +114,7 @@ try {
     }
       //actualizarcurso
       public function actualizarEstudiantes($datos){
-           var_dump($datos);
+         //  var_dump($datos);
         try {
             //code... 
             $datos['usuario'] = "Jb";
