@@ -60,10 +60,8 @@ class Login extends Controller
 
             
             session_write_close();
-            $this->view->render('main/index');
-        } else {
-            $this->view->render('main/index');
-        }
+            $this->view->render('login/index');
+        } 
 
 
     }

@@ -9,7 +9,7 @@
     <div class="mb-3">
       <label for="" class="form-label">Nombre</label>
       <input type="text" required
-        class="form-control" name="name" id="name" aria-describedby="helpId" placeholder=""
+        class="form-control" name="name" id="name" aria-describedby="helpId" placeholder="Name here"
         value="<?php echo isset($this->datos->name)? $this->datos->name :"";?>">
       <small id="helpId" class="form-text text-muted">Nombre Curso</small>
     </div>
@@ -17,15 +17,15 @@
     <div class="mb-3">
         <label for="" class="form-label">Email</label>
         <input type="text" required
-          class="form-control" name="email" id="email" aria-describedby="helpId" placeholder=""
+          class="form-control" name="email" id="email" aria-describedby="helpId" placeholder="Email here"
           value="<?php echo isset($this->datos->email)? $this->datos->email :"";?>">
         <small id="helpId" class="form-text text-muted">Tiempo del Curso</small>
       </div>
       
     <div class="mb-3">
         <label for="" class="form-label">Password</label>
-        <input type="text" required
-          class="form-control" type="password" name="password" id="password" aria-describedby="helpId" placeholder=""
+        <input type="password" required
+          class="form-control"  name="password" id="password" aria-describedby="helpId" placeholder="Password here"
           value="<?php echo isset($this->datos->password)? $this->datos->password :"";?>">
         <small id="helpId" class="form-text text-muted">Descripcion Curso</small>
       </div>
