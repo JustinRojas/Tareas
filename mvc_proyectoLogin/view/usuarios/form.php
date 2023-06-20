@@ -1,8 +1,8 @@
     <div class="mb-3" <?php echo isset($this->datos->id)? "" :"hidden";?>>
       <label for="" class="form-label">Id</label>
-      <input type="text" 
+      <input type="text"  <?php echo isset($this->datos->id) ? "readonly" : ""; ?>
         class="form-control" name="id" id="id" aria-describedby="helpId" placeholder="" 
-        value="<?php echo isset($this->datos->id)? $this->datos->id :"";?>">
+        value="<?php echo isset($this->datos->id)? $this->datos->id :"";?>" style="background-color: rgb(184, 184, 184);">
       <small id="helpId" class="form-text text-muted">Help text</small>
     </div>
 

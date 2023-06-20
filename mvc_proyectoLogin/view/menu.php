@@ -16,8 +16,6 @@ if (!isset($_SESSION) || $ses == 1) {
 if ($name == "") {
   $ses = 1;
 }
-var_dump($name, $ses);
-
 
 ?>
 
@@ -62,8 +60,9 @@ var_dump($name, $ses);
       </div>
 
       <div class="m-2">
-        <h6 type="" <?php echo $ses == 2 ? "" : "hidden"; ?> onClick="" class=""> <?php echo 'Bienvenido ' . $name ?>
-        </h6>
+        <h6 type="" <?php echo $ses == 2 ? "" : "hidden"; ?> onClick="" class=""> <?php echo 'Welcome: ' ?>
+       <a style="color:#9F57CA"> <?php echo $name ?></a>
+      </h6>
       </div>
 
       <div class="m-2">
