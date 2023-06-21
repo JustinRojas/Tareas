@@ -5,7 +5,7 @@
                 <p id="frase" style="  padding-top: 1rem;
     font-family: Georgia, Serif;
     font-weight: 500;
-    font-size: x-large;"> Lista de películas para rellenar el index</p>
+    font-size: x-large;"> Lista de películas</p>
             </div>
 
         </div>
