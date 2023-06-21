@@ -1,7 +1,7 @@
-<div style="max-width:50%; margin:auto; padding:auto;" class="">
+<div style="max-width:50%; margin:auto; padding:auto; background-color: #EBD9F6;" class="mt-3">
 
 
-    <div class="">
+    <div class="p-3">
         <div class="mb-3" <?php echo isset($this->datos->id) ? "" : "hidden"; ?>>
             <label for="" class="form-label">Id</label>
                     <!-- para pasar el valor, y la segunda validación para que solo se pueda leer -->
@@ -119,7 +119,7 @@
         </div>
         <div class="mb-3">
             <button type="submit" class="btn btn-primary">Salvar</button>
-            <a type="reset" href="<?php echo constant('URL'); ?>profesores" class="btn btn-secondary">Volver</a>
+            <a type="reset" href="<?php echo constant('URL'); ?>estudiantes" class="btn btn-secondary">Volver</a>
         </div>
     </div>
 
